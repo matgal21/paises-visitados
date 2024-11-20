@@ -30,7 +30,7 @@ function App() {
             <div className="flex items-center">
               <a href="/" className='flex items-center'>
               <Plane className="h-8 w-8 text-indigo-600" />
-              <span className="ml-2 text-xl font-bold text-gray-800 ">Países visitados</span>
+              <span className="ml-2 text-xl font-bold text-gray-800 ">Países visitados </span>
               </a>
             </div>
             <button
