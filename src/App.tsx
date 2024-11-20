@@ -20,21 +20,22 @@ function App() {
       return newSet;
     });
   };
+  
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-b from-gray-700 to-gray-900">
       <nav className="bg-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16 items-center">
             <div className="flex items-center">
               <Plane className="h-8 w-8 text-indigo-600" />
-              <span className="ml-2 text-xl font-bold text-gray-800">Travel Tracker</span>
+              <span className="ml-2 text-xl font-bold text-gray-800">Países visitados</span>
             </div>
             <button
               onClick={() => setShowList(!showList)}
               className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 hover:text-indigo-600"
             >
-              <List className="h-5 w-5 mr-1" />
+              <List className="h-8 w-8 mr-1" />
               {showList ? 'Ocultar Lista' : 'Mostrar Lista'}
             </button>
           </div>
@@ -50,6 +51,7 @@ function App() {
             />
             <Legend />
           </div>
+
 
           {showList && (
             <CountryList 

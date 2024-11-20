@@ -13,7 +13,7 @@ interface WorldMapProps {
 const WorldMap: React.FC<WorldMapProps> = ({ visitedCountries, onCountryClick }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [mapData, setMapData] = useState<any>(null);
+  const [mapData, setMapData] = useState<unknown>(null);
 
   useEffect(() => {
     const fetchMapData = async () => {
@@ -52,7 +52,7 @@ const WorldMap: React.FC<WorldMapProps> = ({ visitedCountries, onCountryClick })
 
   if (error || !mapData) {
     return (
-      <div className="bg-white rounded-xl shadow-lg p-4 relative min-h-[400px] flex items-center justify-center">
+      <div className="rounded-xl shadow-lg p-4 relative min-h-[400px] flex items-center justify-center">
         <div className="text-center">
           <AlertCircle className="w-8 h-8 text-red-500 mx-auto" />
           <p className="mt-2 text-gray-800">{error || 'Error loading map data'}</p>
@@ -68,16 +68,16 @@ const WorldMap: React.FC<WorldMapProps> = ({ visitedCountries, onCountryClick })
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-4 relative min-h-[400px]">
+    <div className="bg-blue-300 rounded-xl shadow-lg p-4 relative min-h-[400px]">
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
-          scale: 147,
+          scale: 150,
           center: [0, 30]
         }}
         style={{
           width: "100%",
-          height: "400px"
+          height: "500px"
         }}
       >
         <ZoomableGroup>
@@ -96,13 +96,13 @@ const WorldMap: React.FC<WorldMapProps> = ({ visitedCountries, onCountryClick })
                     onClick={() => onCountryClick(countryName)}
                     style={{
                       default: {
-                        fill: isVisited ? '#4F46E5' : '#D1D5DB',
-                        stroke: '#FFFFFF',
+                        fill: isVisited ? '#38b000' : '#D1D5DB',
+                        stroke: '#000',
                         strokeWidth: 0.5,
                         outline: 'none',
                       },
                       hover: {
-                        fill: isVisited ? '#4338CA' : '#9CA3AF',
+                        fill: isVisited ? '#008000' : '#9CA3AF',
                         stroke: '#FFFFFF',
                         strokeWidth: 0.5,
                         outline: 'none',
